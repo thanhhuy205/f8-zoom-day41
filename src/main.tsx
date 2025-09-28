@@ -6,10 +6,9 @@ import App from "./App.tsx";
 import Loading from "./components/Loading/index.tsx";
 import store from "./store/store.ts";
 
-const basename = import.meta.env.VITE_BASENAME || "/";
 createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <HashRouter basename={basename}>
+    <HashRouter>
       <ReduxProvider store={store}>
         <Loading />
         <App />
