@@ -1,4 +1,5 @@
 import DefaultLayout from "@/layouts/DefaultLayout";
+import Home from "@/pages/Home";
 import ProductDetail from "@/pages/ProductDetail";
 import ProductList from "@/pages/ProductList";
 import type { RouteObject } from "react-router";
@@ -17,5 +18,9 @@ export const configs: RouteObject[] = [
         element: <ProductList />,
       },
     ],
+  },
+  {
+    path: "/",
+    element: <Home />,
   },
 ];
