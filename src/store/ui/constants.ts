@@ -1,0 +1,3 @@
+const NAME_SPACE = "ui";
+export const SHOW_LOADING = `${NAME_SPACE}/SHOW_LOADING`;
+export const HIDE_LOADING = `${NAME_SPACE}/HIDE_LOADING`;
