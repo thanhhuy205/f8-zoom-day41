@@ -1,20 +1,10 @@
 import { useProductDetail } from "@/store/product";
 import type { ProductDetailReturn } from "@/store/product/type";
-import { showLoading } from "@/store/ui/actions";
-import { useLoading } from "@/store/ui/hook";
-import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 const ProductDetail = () => {
   const navigate = useNavigate();
   const product: ProductDetailReturn = useProductDetail();
-  const dispatch = useLoading();
-
-  useEffect(() => {
-    if (!product) {
-      dispatch(showLoading());
-    }
-  }, [product, dispatch]);
 
   if (!product)
     return (
@@ -23,7 +13,7 @@ const ProductDetail = () => {
   return (
     <div className="max-w-4xl mx-auto p-6 bg-white mt-6">
       <button
-        onClick={() => navigate("/products")}
+        onClick={() => navigate(-1)}
         className="mb-4 px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded-lg transition-colors"
       >
         &larr; Back to Products

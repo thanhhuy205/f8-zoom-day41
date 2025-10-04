@@ -1,7 +1,13 @@
 // Initial state: { list: [], detail: null }
 // Handle các action types tương ứng
 // Important: Immutable updates, không mutate state trực tiếp
-import { GET_DETAIL, GET_LIST, SET_DETAIL, SET_LIST } from "./constants";
+import {
+  GET_DETAIL,
+  GET_LIST,
+  SET_DETAIL,
+  SET_ERROR,
+  SET_LIST,
+} from "./constants";
 import type { ActionProps, initialStateProduct } from "./type";
 
 const initialState: initialStateProduct = { list: [], detail: null };
@@ -15,7 +21,7 @@ const reducer = (
       return { ...state, detail: null };
 
     case GET_LIST:
-      return { ...state, detail: null };
+      return { ...state, list: [], detail: null };
 
     case SET_LIST:
       return { ...state, list: action.payload, detail: null };
@@ -23,10 +29,12 @@ const reducer = (
     case SET_DETAIL:
       return { ...state, detail: action.payload };
 
+    case SET_ERROR:
+      return { ...state, detail: null, error: action.payload };
+
     default:
       return state;
   }
 };
-
 
 export default reducer;

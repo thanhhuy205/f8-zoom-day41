@@ -1,4 +1,5 @@
 import type { RootState } from "./type";
 
-export const getProducts = (state: RootState) => state.product;
-export const getProductDetail = (state: RootState) => state.product.detail;
+export const selectList = (state: RootState) => state.product;
+export const selectDetail = (state: RootState) => state.product.detail;
+export const selectProductError = (state: RootState) => state.product?.error;
